@@ -1,4 +1,4 @@
-# ROS-for-Jetbot_cpp
+# ROS-for-Jetbot-cpp
 
 ROS nodes and driver libraries for NVIDIA JetBot with Jetson Nano
 
