@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>twist_mux</name>
+  <version>0.0.1</version>
+  <description>The twist_mux package</description>
+
+  <maintainer email="jac@sjakio.com">jac</maintainer>
+  <license>BSD</license>
+  <url type="website">http://wiki.sjakio.com</url>
+  <author email="jac@sjakio.com">Jac</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

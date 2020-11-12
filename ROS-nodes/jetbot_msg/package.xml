@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>jetbot_msg</name>
+  <version>0.1.0</version>
+  <description>The jetbot_msg package</description>
+
+  <maintainer email="jac@sjakio.com">jac</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://wiki.sjakio.com</url>
+
+  <author email="jac@sjakio.com">Jac</author>
+
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+
+</package>

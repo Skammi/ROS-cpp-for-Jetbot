@@ -1,0 +1,5 @@
+jetbot_stats:
+ {
+  power_get_pulse_: 1.0,
+  stats_pub_pulse_: 3.0
+ }

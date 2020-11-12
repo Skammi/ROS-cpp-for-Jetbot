@@ -1,0 +1,10 @@
+# action.srv
+Header header
+uint8 action_sp
+uint8 velocity_sp
+---
+Header header
+bool accepted
+uint8 action_pv
+uint8 velocity_pv
+# eof state.srv

@@ -1,0 +1,27 @@
+gamepcps3:
+ {
+  axis_linear: 1,
+  axis_angular: 0,
+  Y_button: 0,
+  B_button: 1,
+  A_button: 2,
+  X_button: 3,
+  1L_button: 4,
+  2L_button: 6,
+  1R_button: 5,
+  2R_button: 7,
+ }
+twist_definition:
+ {
+  step_linear: 0.1,
+  min_linear: -1.0,
+  max_linear: 1.0,
+  step_angular: 0.1,
+  min_angular: -1.0,
+  max_angular: 1.0
+ }
+joy_twist:
+ {
+  nap_periode: 100.0
+ }
+ 

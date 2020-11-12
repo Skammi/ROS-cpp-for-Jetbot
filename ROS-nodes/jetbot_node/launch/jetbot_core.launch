@@ -1,0 +1,6 @@
+<launch>
+	<arg name="multi_robot_name" default=""/>
+	<rosparam command="load" file="$(find jetbot_node)/launch/jetbot_parms.yaml" />
+
+	<node pkg="jetbot_node" type="jetbot_node" name="jetbot_node" output="screen"></node>
+</launch>

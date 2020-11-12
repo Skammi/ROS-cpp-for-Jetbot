@@ -1,0 +1,12 @@
+<!-- Launch file to start the nodes on the jetson --><launch>
+	<arg name="multi_robot_name" default=""/>
+
+	<include file="$(find jetbot_stats)/launch/jetbot_stats.launch">
+		<arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
+	</include>
+
+	<include file="$(find jetbot_node)/launch/jetbot_core.launch">
+		<arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
+	</include>
+
+</launch>

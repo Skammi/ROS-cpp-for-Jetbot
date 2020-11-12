@@ -1,0 +1,13 @@
+<launch>
+	<arg name="multi_robot_name" default=""/>
+	<rosparam command="load" file="$(find teleop_joy_twist)/launch/joy_twist_parms.yaml" />
+
+	<!-- joy node -->
+		<node respawn="true" pkg="joy" type="joy_node" name="turtle_joy" >
+			<param name="dev" type="string" value="/dev/input/js0" />
+			<param name="deadzone" value="0.12" />
+		</node>
+	<!-- teleop node-->
+		<node pkg="teleop_joy_twist" type="joy_twist_node" name="joy_twist_node" output="screen"></node>
+
+</launch>

@@ -1,0 +1,13 @@
+<!-- Launch file to start the nodes on the PC -->
+<launch>
+	<arg name="multi_robot_name" default=""/>
+
+	<include file="$(find twist_mux)/launch/twist_mux.launch">
+		<arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
+	</include>
+
+	<include file="$(find teleop_joy_twist)/launch/joy_twist.launch">
+		<arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
+	</include>
+
+</launch>

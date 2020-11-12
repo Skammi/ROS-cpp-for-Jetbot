@@ -1,0 +1,6 @@
+twist_mux:
+ {
+  block_auto_time: 1.0,
+  heartbeat: 1.0,
+  nap_periode: 10.0
+ }

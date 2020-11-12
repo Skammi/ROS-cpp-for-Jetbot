@@ -1,0 +1,7 @@
+<launch>
+	<arg name="multi_robot_name" default=""/>
+	<rosparam command="load" file="$(find twist_mux)/launch/twist_mux_parms.yaml" />
+
+	<!-- twist_mux node-->
+		<node pkg="twist_mux" type="twist_mux_node" name="twist_mux_node" output="screen"></node>
+</launch>

@@ -1,0 +1,8 @@
+jetbot:
+ {
+  width: 0.115,
+  ratio: 4095,
+  heartbeat_offset: 2.0,
+  max_missed_heartbeats: 2,
+  nap_periode: 100.0
+ }

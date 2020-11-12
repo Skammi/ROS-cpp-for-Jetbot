@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>jetbot_stats</name>
+  <version>0.0.1</version>
+  <description>The jetbot_stats package</description>
+
+  <maintainer email="jac@sjakio.com">jac</maintainer>
+  <license>BSD</license>
+  <url type="website">http://wiki.sjakio.com</url>
+  <author email="jac@sjakio.com">Jac</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>ina219</depend>
+  <depend>roscpp</depend>
+  <depend>jetbot_msg</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>
