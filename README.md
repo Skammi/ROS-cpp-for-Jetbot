@@ -1,9 +1,5 @@
 # ROS-for-Jetbot-cpp
 
-ROS nodes and driver libraries for NVIDIA JetBot with Jetson Nano
-
-# ROS-for-Jetbot-cpp
-
 ROS nodes and driver libraries for NVIDIA JetBot with Jetson Nano. The libraries are aimed for the Jetbot Kit provided by WaveShare.
 
 # Synopsis
