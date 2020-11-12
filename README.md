@@ -30,7 +30,7 @@ Here a short overview:
 - twist_mux -> Takes a teleop or auto cmd_vel publish that it also published a heartbeat.
 - jetbot-node -> Takes the cmd_vel and steers the motors. It also subscribes to the heartbeat and stops the motors when no heartbeat is received for a specific periode.
 - jetbot_stats -> Publishes statistics from the jetbot.
-- jetbot-start -> Contains launch file son to start the nodes on the Jetbot and on to start the nodes on the PC.
+- jetbot-start -> Contains launch files one to start the nodes on the Jetbot and one to start the nodes on the PC.
 
 ### Graphical Overview
 
