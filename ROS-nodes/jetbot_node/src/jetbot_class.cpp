@@ -2,11 +2,12 @@
  *	file :			jetbot.cpp
  *	Project :		jetbot
  *	Created on :	2 Oct 2020
- *	Last edit :		11 Nov 2020
+ *	Last edit :		21 Nov 2020
  *	Author :		jacob
  *
  *	Version	Date	Comment
  *	-------	----	-------
+ *	0.1.4	201121	Adjusted the missed heartbeat message logging.
  *	0.1.3	201103	Added subscriber to mux/heartbeat.
  *	0.1.0	201023	Changed to use differential drive steering to accommodate twist message.
  *	0.0.6	201006	Added jetbot action SP service.
@@ -120,7 +121,9 @@ void JetbotRos::getParameters()
  */
 void JetbotRos::initializeSubscribers()
 {
+	#ifdef INCREASE_ROS_INFO
 	ROS_INFO("jetbot: Initializing Subscribers");
+	#endif
 
 	cmd_vel_sub_ = nh_.subscribe("mux/cmd_vel", SUBBUFFERSIZE, &JetbotRos::twistCallback, this);
 	// test with: rostopic pub -r 2 mux/cmd_vel geometry_msgs/Twist '{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.2}}'
@@ -137,7 +140,9 @@ void JetbotRos::initializeSubscribers()
  * Output	: No return code, timers setup.
  */
 void JetbotRos::initializeTimers() {
+	#ifdef INCREASE_ROS_INFO
 	ROS_INFO("jetbot: Initializing Timers");
+	#endif
 
 	muxHeartbeatCheck_timer_ = nh_.createTimer(ros::Duration(muxHeartbeat_),
 			&JetbotRos::muxHeartbeatTimerCallback, this);
@@ -177,7 +182,11 @@ void JetbotRos::muxHeartbeatCallback(const std_msgs::Bool& _heartbeat)
 	// if heart-beat restart timer
 	if (_heartbeat.data) {
 		T_1muxHeartbeat_ = ros::Time::now().toSec();
-		missedHeartBeats_ = 0;
+		missedHeartBeats_ = 0;			// Reset the missed Heart-beat counter
+		if (logHeartBeatError) {
+			ROS_ERROR("jetbot: Heart-beat restored.");
+			logHeartBeatError = false;	// Reset the log heart-beat flag
+		}
 	}
 } //--[ end muxHeartbeatCallback ]--//
 
@@ -203,8 +212,13 @@ void JetbotRos::muxHeartbeatTimerCallback(const ros::TimerEvent& _timerEvent)
 
 	// Are there more missed
 	if (missedHeartBeats_ > maxMissedHeartbeats_) {
-		ROS_ERROR("jetbot: No Heart-beat stopping motors.");
 		this->brake();			// Stop the jetbot
+		if (not logHeartBeatError) {
+			ROS_ERROR("jetbot: No Heart-beat stopping motors.");
+			logHeartBeatError = true;
+		}
+
+
 	}
 } //--[ end muxHeartbeatTimerCallback ]--//
 

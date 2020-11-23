@@ -2,11 +2,12 @@
  *	file :			jetbot_class.h
  *	Project :		jetbot
  *	Created on :	2 Oct 2020
- *	Last edit :		11 Nov 2020
+ *	Last edit :		21 Nov 2020
  *	Author :		jacob
  *
  *	Version	Date	Comment
  *	-------	----	-------
+ *	0.1.4	201121	Adjusted the missed heartbeat message logging.
  *	0.1.3	201103	Added subscriber to mux/heartbeat.
  *	0.1.0	201023	Changed to use differential drive steering to accommodate twist message.
  *	0.0.6	201006	Added jetbot action SP service.
@@ -65,6 +66,7 @@ class JetbotRos : public MotorCAP {
 
 		double T_1muxHeartbeat_;				// To store time last heart-beat was received
 		int	missedHeartBeats_ {0};				// number of heart-beats missed.
+		bool logHeartBeatError {false};			// To log Heart-beat error only once.
 
 		// Parameter variables
 		double width_ {0};						// Width of the jetbot in meters

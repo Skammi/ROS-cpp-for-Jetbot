@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(jetbot_msg)
-# version 0.1.1
+# version 0.1.3
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -10,9 +10,9 @@ find_package(catkin REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-  message_generation
+    roscpp
+    std_msgs
+    message_generation
 )
 
 ################################################
@@ -21,24 +21,21 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate messages in the 'msg' folder
 add_message_files(
-   FILES
-   powerPub.msg
-   statsPub.msg
-   statePub.msg
-   actionPub.msg
+    FILES
+    powerPub.msg
+    rpmPub.msg
+    actionPub.msg
 )
 
 ## Generate services in the 'srv' folder
-add_service_files(
-   FILES
-   state.srv
-   action.srv
-)
+#add_service_files(
+#    FILES
+#)
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
-  DEPENDENCIES
-  std_msgs
+    DEPENDENCIES
+    std_msgs
 )
 
 
@@ -51,10 +48,10 @@ generate_messages(
 ###################################
 
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES custom_msgs
-  CATKIN_DEPENDS roscpp std_msgs
-#  DEPENDS system_lib
+#   INCLUDE_DIRS include
+#   LIBRARIES custom_msgs
+    CATKIN_DEPENDS roscpp std_msgs
+#   DEPENDS system_lib
 )
 
 ###########
@@ -64,8 +61,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
+#   include
+    ${catkin_INCLUDE_DIRS}
 )
 
 

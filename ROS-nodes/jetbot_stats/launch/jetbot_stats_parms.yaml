@@ -1,5 +1,7 @@
 jetbot_stats:
  {
   power_get_pulse_: 1.0,
-  stats_pub_pulse_: 3.0
+  rpm_get_pulse_: 0.25,
+  power_pub_pulse_: 3.0,
+  rpm_pub_pulse_: 0.25
  }
