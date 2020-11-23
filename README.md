@@ -13,6 +13,7 @@ Here a short overview:
 - ina219 --> Library provides the communication to the ina219 chip uses i2c.
 - ina219_poc --> Program to test the ina219 library.
 - pwm9685 --> Library provides the communication to the pwm9685 chip uses i2c.
+- rpmsensor --> Library provides the communication to the with rpmsensors, uses i2c.
 - motorcap --> Library to run the motors, uses pwm9685 and i2c.
 - motorcap_poc -> Program to test the motorcap library.
 
