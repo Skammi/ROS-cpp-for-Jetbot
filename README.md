@@ -13,11 +13,13 @@ Here a short overview:
 - ina219 --> Library provides the communication to the ina219 chip uses i2c.
 - ina219_poc --> Program to test the ina219 library.
 - pwm9685 --> Library provides the communication to the pwm9685 chip uses i2c.
-- rpmsensor --> Library provides the communication to the with rpmsensors, uses i2c.
+- rpmsensor --> Library provides the communication to the an Arduino with rpmsensors, uses i2c.
 - motorcap --> Library to run the motors, uses pwm9685 and i2c.
 - motorcap_poc -> Program to test the motorcap library.
 
-**Note**: The libraries need to be compiled with the Position Independent code option (-fPIC)
+**Notes**:
+- The libraries need to be compiled with the Position Independent code option (-fPIC)
+- The rpmsensor library interfaces to an Arduino, see: [RPM-Sensors](https://github.com/Skammi/RPM-Sensors)
 
 ## Ros-nodes
 The Ros nodes are split over a Linux PC and the Jetson Nano. Each package where appropriate has launch- and parameter file. There is also a package with to start-up launch files on for the PC and one for the Jetson.
